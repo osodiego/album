@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block section %}
+  <h2>Category</h2>
+  <hr>
+{% endblock section %}
+
+{% block maincontent %}
+  <div>
+    {% for x in object_list %}
+      <a href="{% url 'category-detail' x.pk %}">
+        {{ x.name }}<br>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock maincontent %}
